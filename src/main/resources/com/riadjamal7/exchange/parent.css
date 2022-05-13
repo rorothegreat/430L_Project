@@ -1,0 +1,24 @@
+.nav-container {
+    -fx-border-color: white;
+    -fx-border-width: 1px;
+    -fx-pref-width: 150px;
+}
+.nav-button {
+    -fx-max-width: 150px;
+    -fx-border-style: none;
+    -fx-font-size: 12px;
+    -fx-background-color: none;
+    -fx-text-alignment: left;
+}
+.top-nav-button {
+    -fx-max-width: 150px;
+    -fx-border-style: none;
+    -fx-font-size: 12px;
+    -fx-background-color: none;
+}
+.HeaderBox {
+    -fx-background-color: #1976D2;
+}
+BorderPane {
+    -fx-background-color: #E9EBF0;
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" prefHeight="576.0" prefWidth="924.0" stylesheets="@parent.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.riadjamal7.exchange.Parent">
+    <left>
+        <VBox fillWidth="true" spacing="5" styleClass="nav-container">
+            <Button onAction="#ratesSelected" styleClass="nav-button" text="Exchange Rate">
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin></Button>
+            <Button fx:id="transactionButton" onAction="#transactionsSelected" styleClass="nav-button" text="Transactions" />
+         <Button fx:id="marketButton" mnemonicParsing="false" onAction="#marketSelected" prefHeight="25.0" prefWidth="151.0" styleClass="nav-button" text="Marketplace" />
+        </VBox>
+    </left>
+    <center>
+        <fx:include source="rates/rates.fxml" />
+    </center>
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="924.0" styleClass="HeaderBox" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="46.0" prefWidth="764.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label contentDisplay="RIGHT" prefHeight="52.0" prefWidth="217.0" text="Currency Exchange " textFill="#f8f9fe">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="Arial" size="23.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+               <Button fx:id="registerButton" onAction="#registerSelected" styleClass="top-nav-button" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font></Button>
+               <Button fx:id="loginButton" alignment="TOP_CENTER" onAction="#loginSelected" styleClass="top-nav-button" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font></Button>
+               <Button fx:id="logoutButton" onAction="#logoutSelected" styleClass="top-nav-button" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font></Button>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

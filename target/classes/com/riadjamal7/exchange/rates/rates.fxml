@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" prefHeight="475.0" prefWidth="600.0" stylesheets="@rates.css" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.riadjamal7.exchange.rates.Rates">
+    <Label styleClass="header" text="LBP Exchange Rate" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
+    <Label styleClass="value-label" text="Buy USD Rate" GridPane.rowIndex="4" />
+    <Label fx:id="buyUsdRateLabel" styleClass="value" text="Not Available Yet " GridPane.rowIndex="5" />
+    <Label styleClass="value-label" text="Sell USD Rate" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <Label fx:id="sellUsdRateLabel" styleClass="value" text="Not Available Yet" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Separator orientation="HORIZONTAL" GridPane.RowIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+    <TextField fx:id="usdTextField" GridPane.rowIndex="9" />
+    <TextField fx:id="lbpTextField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+    <Label styleClass="input-label" text="LBP Amount" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+    <Label styleClass="input-label" text="USD Amount" GridPane.rowIndex="8" />
+    <RadioButton text="Buy USD" GridPane.rowIndex="10">
+        <toggleGroup>
+            <ToggleGroup fx:id="transactionType" />
+        </toggleGroup>
+    </RadioButton>
+    <RadioButton text="Sell USD" toggleGroup="$transactionType" GridPane.rowIndex="11" />
+    <Button onAction="#addTransaction" text="Add Transaction" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+    <Button onAction="#Convert" text="Convert" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+   <LineChart fx:id="buygraph" GridPane.columnSpan="2" GridPane.rowIndex="27">
+     <xAxis>
+       <CategoryAxis side="BOTTOM" />
+     </xAxis>
+     <yAxis>
+       <NumberAxis side="LEFT" />
+     </yAxis>
+   </LineChart>
+   <Separator prefWidth="200.0" GridPane.rowIndex="13" />
+   <Label text="History" GridPane.rowIndex="26" />
+   <Separator prefWidth="200.0" GridPane.rowIndex="25" />
+   <Label text="7 Day Selling Average" GridPane.rowIndex="14" />
+   <Label text="7 Day Buying Average" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+   <Label fx:id="lbl_sdaysavg" GridPane.rowIndex="15" />
+   <Label text="24-Hour Selling Rate Trend" GridPane.rowIndex="23" />
+   <Label fx:id="lbl_tfhsrt" GridPane.rowIndex="24" />
+   <Label text="24-Hour Buying Rate Trend" GridPane.columnIndex="1" GridPane.rowIndex="23" />
+   <Label fx:id="lbl_tfhbrt" GridPane.columnIndex="1" GridPane.rowIndex="24" />
+   <Label fx:id="lbl_sdaybavg" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+   <LineChart fx:id="sellgraph" prefHeight="150.0" prefWidth="437.0" GridPane.columnSpan="2" GridPane.rowIndex="28">
+     <xAxis>
+       <CategoryAxis side="BOTTOM" />
+     </xAxis>
+     <yAxis>
+       <NumberAxis side="LEFT" />
+     </yAxis>
+   </LineChart>
+   <Label text="All time USD Volume " GridPane.rowIndex="16" />
+   <Label text="All time LBP Volume " GridPane.columnIndex="1" GridPane.rowIndex="16" />
+   <Label fx:id="lbl_alltimeuv" GridPane.rowIndex="17" />
+   <Label fx:id="lbl_alltimelv" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+   <Label text="Last Day USD Volume" GridPane.rowIndex="18" />
+   <Label fx:id="lbl_lastdayuv" GridPane.rowIndex="19" />
+   <Label fx:id="lbl_srsd" GridPane.rowIndex="22" />
+   <Label text="Selling Rate Standard Deviation" GridPane.rowIndex="21" />
+   <Label text="Last Day LBP Volume" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+   <Label fx:id="lbl_lastdaylv" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+   <Label text="Buying Rate Standard Deviation" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+   <Label fx:id="lbl_brsd" GridPane.columnIndex="1" GridPane.rowIndex="22" />
+   <columnConstraints>
+      <ColumnConstraints maxWidth="257.0" minWidth="158.0" prefWidth="233.0" />
+      <ColumnConstraints maxWidth="332.0" minWidth="233.0" prefWidth="257.0" />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
